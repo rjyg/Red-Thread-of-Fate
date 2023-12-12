@@ -28,6 +28,7 @@ p{
 /* Container */
 #container{
     position: relative;
+    overflow: hidden;
 }
 
 #redLineCanvas {
@@ -37,11 +38,38 @@ p{
     z-index: 2;
 }
 
+/* Rotate your screen */
+@media screen and (max-height: 740px){
+    #rotate{
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #rotate img{
+        width:50vw;
+        max-height: 80%;
+        object-fit: contain;
+    }
+
+    #container > :not(#rotate) {
+        display: none
+    }
+}
+
 /* Small screens */
-/* Header */
-@media screen and (max-width: 960px){
+@media screen and (max-width: 960px) and (min-height: 741px){
+    #rotate{
+        display:none;
+    }
+
+    /* Header */
     header{
-        width: 100%;
+        width: 100vw;
         height: 100vh;
     }
     
@@ -58,13 +86,39 @@ p{
     header p{
         text-align: center;
     }
+
+    /* Character */
+    .character{
+        position: absolute;
+        z-index: 1;
+    }
+    
+    #character1{
+        top: 80vh;
+        left: 50px;
+    }
+    
+    #character2{
+        top: 30vh;
+        left: 150vw;
+        visibility: hidden;
+    }
+
+    /* Panels */
+    #panel1, #panel2, #panel3, #panel4, #panel5, #panel6, #panel7, #panel8, #panel9{
+        width: 100vw;
+        height: 100vh;
+    }
 }
 
 /* For desktop */
-@media only screen and (min-width:960px) {
+@media only screen and (min-width:960px) and (min-height: 741px){
+    #rotate{
+        display:none;
+    }
     /* Header */
     header{
-        width: 100%;
+        width: 100vw;
         height: 100vh;
     }
 
@@ -78,6 +132,7 @@ p{
         padding-left: 15.6rem;
     }
 
+    /* Character */
     .character{
         position: absolute;
         z-index: 1;
@@ -91,5 +146,12 @@ p{
     #character2{
         top: 50vh;
         left: 150vw;
+        visibility: hidden;
+    }
+
+    /* Panels */
+    #panel1, #panel2, #panel3, #panel4, #panel5, #panel6, #panel7, #panel8, #panel9{
+        width: 100vw;
+        height: 100vh;
     }
 }

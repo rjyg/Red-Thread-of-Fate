@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const ctx = canvas.getContext('2d');
     const character1 = document.getElementById('character1');
     const character2 = document.getElementById('character2');
+    const highlight = document.getElementById('highlight'); // Get the highlight element
 
     function updateCanvasSize() {
         const char1Rect = character1.getBoundingClientRect();
@@ -21,13 +22,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
         let startRect = character1.getBoundingClientRect();
         let endRect = character2.getBoundingClientRect();
+        let highlightRect = document.getElementById('highlight').getBoundingClientRect();
+
+        let emSize = parseFloat(getComputedStyle(document.body).fontSize);
 
         let startX = startRect.left + 90;
         let startY = startRect.top + 50;
         let endX = endRect.left + 80;
         let endY = endRect.top + 50;
-        let middleX = window.innerWidth / 2 + 350;
-        let middleY = window.innerHeight / 3 + 450;
+
+        // Start scribble near the highlight element
+        let scribbleStartX = highlightRect.right - (emSize*4); // X position at the right of the highlight element
+        let scribbleStartY = highlightRect.top + highlightRect.height + (emSize*6);
 
         let amplitude = 20;
         let frequency = 1.5;
@@ -35,20 +41,20 @@ document.addEventListener("DOMContentLoaded", function () {
         ctx.beginPath();
         ctx.moveTo(startX, startY);
 
-        // Draw wavy line to the middle
+        // Draw wavy line to the scribble start point
         let lastX = startX, lastY = startY;
         for (let i = 0; i <= 1; i += 0.01) {
-            let x = lerp(startX, middleX, i);
-            let y = lerp(startY, middleY, i) + amplitude * Math.sin(frequency * i * 2 * Math.PI);
+            let x = lerp(startX, scribbleStartX, i);
+            let y = lerp(startY, scribbleStartY, i) + amplitude * Math.sin(frequency * i * 2 * Math.PI);
             ctx.lineTo(x, y);
-            lastX = x;
-            lastY = y;
+            lastX = scribbleStartX;
+            lastY = scribbleStartY;
         }
 
         // Create curves that mimic random scribble loops
         for (let i = 0; i < 15; i++) {
-            let nextX = middleX + Math.random() * 100 - 50;
-            let nextY = middleY + Math.random() * 100 - 50;
+            let nextX = scribbleStartX + Math.random() * 100 - 50;
+            let nextY = scribbleStartY + Math.random() * 100 - 50;
 
             let cp1X = (lastX + nextX) / 2 + Math.random() * 50 - 25;
             let cp1Y = (lastY + nextY) / 2 + Math.random() * 50 - 25;
@@ -80,6 +86,13 @@ document.addEventListener("DOMContentLoaded", function () {
         drawWavyLine();
     });
 
-    updateCanvasSize();
-    drawWavyLine();
+    window.onload = function() {
+        updateCanvasSize();
+        drawWavyLine();
+        // setInterval(function() {
+        //     updateCanvasSize();
+        //     drawWavyLine();
+        // }, 100);
+    };    
+    
 });

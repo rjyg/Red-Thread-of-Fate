@@ -10,36 +10,61 @@
 </head>
 
 <body>
+    <div id="rotate">
+        <img src="images/rotate.png"/>
+        <p>Please view in portrait mode!</p>
+    </div>
     <div id="container">
         <canvas id="redLineCanvas"></canvas>
         <header>
             <div id="header">
                 <h1>The Red Thread of Fate</h1>
                 <p>Two people connected by the red thread are destined lovers. The thread may stretch or tangle, but
-                    never break.</p>
+                    <span id="highlight">never break.</span></p>
             </div>
         </header>
         <div id="narrative">
-            <div id="character1" class="character"><img src="https://placehold.co/100x100" /></div>
-            <div id="character2" class="character"><img src="https://placehold.co/100x100" /></div>
+            <img id="character1" class="character" src="https://placehold.co/100x100" />
+            <img id="character2" class="character" src="https://placehold.co/100x100" />
+            <div id="panel1">
+                <p>A young boy meets Yue Lao, the old man under the moonlight.</p>
+            </div>
+            <div id="panel2">
+                <p>Yue Lao reveals the red thread of fate, connecting the boy to his destined wife.</p>
+            </div>
+            <div id="panel3">
+                <p>The red thread leads to a young girl, unknown to the boy.</p>
+            </div>
+            <div id="panel4">
+                <p>In his youthful naivety, the boy throws a rock at the girl and runs away.</p>
+            </div>
+            <div id="panel5">
+                <p>Years later, the boy, now a young man, is set to be married.</p>
+            </div>
+            <div id="panel6">
+                <p>On his wedding night, he discovers his wife to be a great beauty of the village.</p>
+            </div>
+            <div id="panel7">
+                <p>He notices an adornment on her eyebrow.</p>
+            </div>
+            <div id="panel8">
+                <p>She reveals that a boy once threw a rock at her, leaving a scar.</p>
+            </div>
+            <div id="panel9">
+                <p>The red thread of fate had bound them all along, from childhood to this destined union.</p>
+            </div>
+        </div>
+        <footer>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
                 industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
                 scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
                 into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
                 release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
                 software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-            
-        </div>
-        <div id="footer">
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-                scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
-                into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
-                release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
-                software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-        </div>
+        </footer>
     </div>
     <script src="scripts/thread.js"></script>
+    <script src="scripts/scroll.js"></script>
 </body>
 
 </html>

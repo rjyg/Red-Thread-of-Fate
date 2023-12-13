@@ -1,20 +1,13 @@
-document.addEventListener("DOMContentLoaded", function () {
+window.onload = function() {
     const canvas = document.getElementById('redLineCanvas');
     const ctx = canvas.getContext('2d');
     const character1 = document.getElementById('character1');
     const character2 = document.getElementById('character2');
-    const highlight = document.getElementById('highlight'); // Get the highlight element
+    let highlight = document.getElementById('highlight'); // Initial highlight element
 
     function updateCanvasSize() {
-        const char1Rect = character1.getBoundingClientRect();
-        const char2Rect = character2.getBoundingClientRect();
-
-        // Check which character is lower on the screen
-        const lowerCharBottom = Math.max(char1Rect.bottom, char2Rect.bottom);
-
-        // Set canvas dimensions
-        canvas.width = document.documentElement.clientWidth; // Width of the viewport excluding vertical scrollbar
-        canvas.height = Math.max(window.innerHeight, lowerCharBottom); // Height based on the lower character
+        canvas.width = window.innerWidth;
+        canvas.height = document.body.scrollHeight; // Height of the entire scrollable document
     }
 
     function drawWavyLine() {
@@ -22,18 +15,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
         let startRect = character1.getBoundingClientRect();
         let endRect = character2.getBoundingClientRect();
-        let highlightRect = document.getElementById('highlight').getBoundingClientRect();
+        let highlightRect = highlight.getBoundingClientRect(); // Updated to the current highlight element
 
         let emSize = parseFloat(getComputedStyle(document.body).fontSize);
 
-        let startX = startRect.left + 90;
-        let startY = startRect.top + 50;
-        let endX = endRect.left + 80;
-        let endY = endRect.top + 50;
+        let startX = startRect.left + startRect.width / 2;
+        let startY = startRect.top + startRect.height / 2 + window.scrollY;
+        let endX = endRect.left + endRect.width / 2;
+        let endY = endRect.top + endRect.height / 2 + window.scrollY;
 
-        // Start scribble near the highlight element
-        let scribbleStartX = highlightRect.right - (emSize*4); // X position at the right of the highlight element
-        let scribbleStartY = highlightRect.top + highlightRect.height + (emSize*6);
+        let scribbleStartX = highlightRect.left + (emSize*4); // Adjusted position for scribble start
+        let scribbleStartY = highlightRect.top + window.scrollY + highlightRect.height + (emSize*6);
 
         let amplitude = 20;
         let frequency = 1.5;
@@ -42,16 +34,14 @@ document.addEventListener("DOMContentLoaded", function () {
         ctx.moveTo(startX, startY);
 
         // Draw wavy line to the scribble start point
-        let lastX = startX, lastY = startY;
         for (let i = 0; i <= 1; i += 0.01) {
             let x = lerp(startX, scribbleStartX, i);
             let y = lerp(startY, scribbleStartY, i) + amplitude * Math.sin(frequency * i * 2 * Math.PI);
             ctx.lineTo(x, y);
-            lastX = scribbleStartX;
-            lastY = scribbleStartY;
         }
 
         // Create curves that mimic random scribble loops
+        let lastX = scribbleStartX, lastY = scribbleStartY;
         for (let i = 0; i < 15; i++) {
             let nextX = scribbleStartX + Math.random() * 100 - 50;
             let nextY = scribbleStartY + Math.random() * 100 - 50;
@@ -60,7 +50,6 @@ document.addEventListener("DOMContentLoaded", function () {
             let cp1Y = (lastY + nextY) / 2 + Math.random() * 50 - 25;
 
             ctx.quadraticCurveTo(cp1X, cp1Y, nextX, nextY);
-
             lastX = nextX;
             lastY = nextY;
         }
@@ -81,18 +70,53 @@ document.addEventListener("DOMContentLoaded", function () {
         return start * (1 - t) + end * t;
     }
 
+    function updateHighlightElement() {
+        // Find the panel that occupies the most space in the viewport
+        const panels = [
+            document.querySelector('header'),
+            ...document.querySelectorAll('#narrative > div'),
+            document.querySelector('footer')
+        ];
+    
+        let mostVisiblePanel = null;
+        let maxVisibleArea = 0;
+    
+        panels.forEach(panel => {
+            const rect = panel.getBoundingClientRect();
+            const visibleArea = Math.max(0, Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0));
+    
+            if (visibleArea > maxVisibleArea) {
+                maxVisibleArea = visibleArea;
+                mostVisiblePanel = panel;
+            }
+        });
+    
+        if (mostVisiblePanel) {
+            const newHighlight = mostVisiblePanel.querySelector('span#highlight');
+            if (newHighlight) {
+                highlight = newHighlight;
+            }
+        }
+    }
+    
+
     window.addEventListener('resize', function () {
         updateCanvasSize();
         drawWavyLine();
     });
 
-    window.onload = function() {
-        updateCanvasSize();
-        drawWavyLine();
-        // setInterval(function() {
-        //     updateCanvasSize();
-        //     drawWavyLine();
-        // }, 100);
-    };    
+    window.addEventListener('scroll', function() {
+        // Update the highlight element first
+        updateHighlightElement();
     
-});
+        // Use requestAnimationFrame to ensure drawing is synced with the browser's rendering
+        requestAnimationFrame(function() {
+            updateCanvasSize();
+            drawWavyLine();
+        });
+    });
+    
+    // Initial canvas setup and draw
+    updateCanvasSize();
+    drawWavyLine();
+};

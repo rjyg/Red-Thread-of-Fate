@@ -6,13 +6,17 @@
     <meta name="description" content="An interactive story on the Red Thread of Fate">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/stylesheet.css">
+    <script src="scripts/script.js"></script>
+    <script src="scripts/thread.js"></script>
+    <script src="scripts/scroll.js"></script>
+    <script src="scripts/characters.js"></script>
     <title>The Red Thread of Fate</title>
 </head>
 
 <body>
     <div id="rotate">
         <img src="images/rotate.png"/>
-        <p>Please view in portrait mode!</p>
+        <p>Please view in portrait mode or a bigger screen!</p>
     </div>
     <div id="container">
         <canvas id="redLineCanvas"></canvas>
@@ -25,33 +29,34 @@
         </header>
         <div id="narrative">
             <img id="character1" class="character" src="https://placehold.co/100x100" />
-            <img id="character2" class="character" src="https://placehold.co/100x100" />
+            <img id="character2" class="character" src="https://placehold.co/99x99" />
+            <!-- <img id="character3" class="character" src="https://placehold.co/90x90" /> -->
             <div id="panel1">
-                <p>A young boy meets Yue Lao, the old man under the moonlight.</p>
+                <p>A young boy meets Yue Lao<span id="highlight"></span>, the old man under the moonlight.</p>
             </div>
             <div id="panel2">
-                <p>Yue Lao reveals the red thread of fate, connecting the boy to his destined wife.</p>
+                <p>Yue Lao reveals the <span id="highlight"></span>red thread of fate, connecting the boy to his destined wife.</p>
             </div>
             <div id="panel3">
-                <p>The red thread leads to a young girl, unknown to the boy.</p>
+                <p>The red thread leads to a <span id="highlight"></span>young girl, unknown to the boy.</p>
             </div>
             <div id="panel4">
-                <p>In his youthful naivety, the boy throws a rock at the girl and runs away.</p>
+                <p>In his youthful naivety, the boy throws a <span id="highlight"></span>rock at the girl and runs away.</p>
             </div>
             <div id="panel5">
-                <p>Years later, the boy, now a young man, is set to be married.</p>
+                <p>Years later, the boy, now a young man, is set to be <span id="highlight"></span>married.</p>
             </div>
             <div id="panel6">
-                <p>On his wedding night, he discovers his wife to be a great beauty of the village.</p>
+                <p>On his wedding night, he discovers <span id="highlight"></span>his wife to be a great beauty of the village.</p>
             </div>
             <div id="panel7">
-                <p>He notices an adornment on her eyebrow.</p>
+                <p>He notices an <span id="highlight"></span>adornment on her eyebrow.</p>
             </div>
             <div id="panel8">
-                <p>She reveals that a boy once threw a rock at her, leaving a scar.</p>
+                <p>She reveals that a boy once <span id="highlight"></span>threw a rock at her, leaving a scar.</p>
             </div>
             <div id="panel9">
-                <p>The red thread of fate had bound them all along, from childhood to this destined union.</p>
+                <p>The red thread of fate had bound them all along, from childhood to this <span id="highlight"></span>destined union.</p>
             </div>
         </div>
         <footer>
@@ -63,8 +68,6 @@
                 software like Aldus PageMaker including versions of Lorem Ipsum.</p>
         </footer>
     </div>
-    <script src="scripts/thread.js"></script>
-    <script src="scripts/scroll.js"></script>
 </body>
 
 </html>

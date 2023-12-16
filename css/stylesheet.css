@@ -36,7 +36,7 @@ p {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 2;
+    z-index: 1;
 }
 
 /* Rotate your screen */
@@ -92,27 +92,43 @@ p {
     /* Character */
     .character {
         position: absolute;
-        z-index: 1;
-        /* transition: top 0.5s ease, left 0.5s ease; */
+        z-index: 2;
+        transition: all ease;
     }
 
     #character1 {
-        top: 80vh;
-        left: 50px;
+        top: 70vh;
+        left: 5rem;
+        max-height: 20rem;
     }
 
     #character2 {
-        margin-top: 25vh;
-        margin-left: 20vw;
+        top: 70vh;
+        left: 100vw;
+    }
+
+    #character3{
+        height: 40rem;
     }
 
     /* Panels */
-    #panel1, #panel2, #panel3, #panel4, #panel5, #panel6, #panel7, #panel8, #panel9 {
+    #narrative {
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-direction: column;
+    }
+
+    #panel1, #panel2, #panel3, #panel4, #panel5, #panel6, #panel7, #panel8, #panel9 {
         width: 100vw;
         height: 100vh;
+    }
+
+    .narrative-text{
+        padding-top: 40vh;
+        text-align: center;
+        width: 80vw;
+        margin: auto;
     }
 
     /* Footer */
@@ -151,27 +167,43 @@ p {
     /* Character */
     .character {
         position: absolute;
-        z-index: 1;
-        /* transition: top 0.5s ease, left 0.5s ease; */
+        z-index: 2;
+        transition: all ease;
     }
 
     #character1 {
-        top: 85vh;
-        left: 50px;
+        top: 70vh;
+        left: 5rem;
+        height: 20rem;
     }
 
     #character2 {
-        margin-top: 25vh;
-        margin-left: 20vw;
+        top: 70vh;
+        left: 100vw;
+    }
+
+    #character3{
+        height: 40rem;
     }
 
     /* Panels */
-    #panel1, #panel2, #panel3, #panel4, #panel5, #panel6, #panel7, #panel8, #panel9 {
+    #narrative {
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-direction: column;
+    }
+
+    #panel1, #panel2, #panel3, #panel4, #panel5, #panel6, #panel7, #panel8, #panel9 {
         width: 100vw;
         height: 100vh;
+    }
+
+    .narrative-text{
+        padding-top: 40vh;
+        text-align: center;
+        width: 80vw;
+        margin: auto;
     }
 
     /* Footer */

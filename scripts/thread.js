@@ -66,7 +66,7 @@ window.onload = function() {
         let endY = endRect.top + endRect.height / 2 + window.scrollY;
     
         let scribbleStartX = highlightRect.left + (emSize*4); 
-        let scribbleStartY = highlightRect.top + window.scrollY + highlightRect.height + (emSize*6);
+        let scribbleStartY = highlightRect.top + window.scrollY + highlightRect.height + (emSize*7);
     
         let amplitude = 20;
         let frequency = 1.5;

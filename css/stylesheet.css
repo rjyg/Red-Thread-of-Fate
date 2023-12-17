@@ -12,6 +12,7 @@ html {
     background-color: #f8e7d3;
     width: 100vw;
     overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 h1, h2 {

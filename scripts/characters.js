@@ -23,57 +23,57 @@ document.addEventListener("DOMContentLoaded", function() {
         switch (panelIndex) {
             case 0: // Header
                 imagePath1 = 'images/panel 1 - boy.svg';
-                imagePath2 = 'images/character2_default.svg';
+                imagePath2 = 'images/panel 3 - girl.svg';
                 imagePath3 = 'images/panel 2 - yue lao.svg';
                 break;
             case 1: // Panel 1
                 imagePath1 = 'images/panel 1 - boy.svg';
-                imagePath2 = 'images/character2_panel1.svg';
+                imagePath2 = 'images/panel 3 - girl.svg';
                 imagePath3 = 'images/panel 1 - yue lao.svg';
                 break;
             case 2: // Panel 2
                 imagePath1 = 'images/panel 1 - boy.svg';
-                imagePath2 = 'images/character2_default.svg';
+                imagePath2 = 'images/panel 3 - girl.svg';
                 imagePath3 = 'images/panel 2 - yue lao.svg';
                 break;
             case 3: // Panel 3
                 imagePath1 = 'images/panel 1 - boy.svg';
-                imagePath2 = 'images/character2_default.svg';
+                imagePath2 = 'images/panel 3 - girl.svg';
                 imagePath3 = 'images/panel 2 - yue lao.svg';
                 break;
             case 4: // Panel 4
-                imagePath1 = 'images/panel 1 - boy.svg';
-                imagePath2 = 'images/character2_default.svg';
+                imagePath1 = 'images/panel 4 - boy.svg';
+                imagePath2 = 'images/panel 3 - girl.svg';
                 imagePath3 = 'images/panel 2 - yue lao.svg';
                 break;
             case 5: // Panel 5
-                imagePath1 = 'images/panel 1 - boy.svg';
-                imagePath2 = 'images/character2_default.svg';
+                imagePath1 = 'images/panel 5 - boy.svg';
+                imagePath2 = 'images/panel 3 - girl.svg';
                 imagePath3 = 'images/panel 2 - yue lao.svg';
                 break;
             case 6: // Panel 6
-                imagePath1 = 'images/panel 1 - boy.svg';
-                imagePath2 = 'images/character2_default.svg';
+                imagePath1 = 'images/panel 6 - boy.svg';
+                imagePath2 = 'images/panel 6 - girl.svg';
                 imagePath3 = 'images/panel 2 - yue lao.svg';
                 break;
             case 7: // Panel 7
-                imagePath1 = 'images/panel 1 - boy.svg';
-                imagePath2 = 'images/character2_default.svg';
+                imagePath1 = 'images/panel 6 - boy.svg';
+                imagePath2 = 'images/panel 6 - girl.svg';
                 imagePath3 = 'images/panel 2 - yue lao.svg';
                 break;
             case 8: // Panel 8
-                imagePath1 = 'images/panel 1 - boy.svg';
-                imagePath2 = 'images/character2_default.svg';
+                imagePath1 = 'images/panel 6 - boy.svg';
+                imagePath2 = 'images/panel 8 - girl.svg';
                 imagePath3 = 'images/panel 2 - yue lao.svg';
                 break;
             case 9: // Panel 9
-                imagePath1 = 'images/panel 1 - boy.svg';
-                imagePath2 = 'images/character2_default.svg';
+                imagePath1 = 'images/panel 6 - boy.svg';
+                imagePath2 = 'images/panel 6 - girl.svg';
                 imagePath3 = 'images/panel 2 - yue lao.svg';
                 break;
             default:
                 imagePath1 = 'images/panel 1 - boy.svg';
-                imagePath2 = 'images/character2_default.svg';
+                imagePath2 = 'images/panel 3 - girl.svg';
                 imagePath3 = 'images/panel 2 - yue lao.svg';
         }
         // Set image sources
@@ -99,73 +99,113 @@ document.addEventListener("DOMContentLoaded", function() {
             case 0: // Header
                 character1.style.left = '10vw';
                 character1.style.top = '70vh';
+                character1.style.height = '20rem';
                 character2.style.left = '100vw';
                 character2.style.top = '70vh';
+                character2.style.height = '15rem';
+                character3.style.left = '100vw';
+                character3.style.top = '250vh';
                 console.log("0");
                 break;
             case 1: // Panel 1
                 character1.style.left = '20vw';
-                character1.style.top = '165vh';
+                character1.style.top = '170vh';
+                character1.style.height = '20rem';
                 character2.style.left = '100vw';
                 character2.style.top = '170vh';
-                character3.style.left = '50vw';
+                character2.style.height = '15rem';
+                character3.style.left = '40vw';
                 character3.style.top = '150vh';
                 break;
             case 2: // Panel 2
                 character1.style.left = '20vw';
                 character1.style.top = '270vh';
+                character1.style.height = '20rem';
                 character2.style.left = '100vw';
                 character2.style.top = '270vh';
-                character3.style.left = '50vw';
+                character2.style.height = '15rem';
+                character3.style.left = '40vw';
                 character3.style.top = '250vh';
                 break;
             case 3: // Panel 3
                 character1.style.left = '10vw';
                 character1.style.top = '370vh';
-                character2.style.left = '100vw';
-                character2.style.top = '370vh';
+                character1.style.height = '20rem';
+                character2.style.left = '75vw';
+                character2.style.top = '375vh';
+                character2.style.height = '15rem';
+                character3.style.left = '100vw';
+                character3.style.top = '250vh';
                 break;
             case 4: // Panel 4
                 character1.style.left = '10vw';
                 character1.style.top = '470vh';
-                character2.style.left = '100vw';
-                character2.style.top = '470vh';
+                character1.style.height = '20rem';
+                character2.style.left = '75vw';
+                character2.style.top = '475vh';
+                character2.style.height = '15rem';
+                character3.style.left = '100vw';
+                character3.style.top = '250vh';
                 break;
             case 5: // Panel 5
-                character1.style.left = '10vw';
-                character1.style.top = '570vh';
+                character1.style.left = '40vw';
+                character1.style.top = '560vh';
+                character1.style.height = '40rem';
                 character2.style.left = '100vw';
                 character2.style.top = '570vh';
+                character2.style.height = '15rem';
+                character3.style.left = '100vw';
+                character3.style.top = '250vh';
                 break;
             case 6: // Panel 6
                 character1.style.left = '10vw';
-                character1.style.top = '670vh';
-                character2.style.left = '100vw';
-                character2.style.top = '670vh';
+                character1.style.top = '660vh';
+                character1.style.height = '40rem';
+                character2.style.left = '65vw';
+                character2.style.top = '660vh';
+                character2.style.height = '40rem';
+                character3.style.left = '100vw';
+                character3.style.top = '250vh';
                 break;
             case 7: // Panel 7
-                character1.style.left = '10vw';
-                character1.style.top = '770vh';
-                character2.style.left = '100vw';
-                character2.style.top = '770vh';
+                character1.style.left = '-100vw';
+                character1.style.top = '750vh';
+                character1.style.height = '120rem';
+                character2.style.left = '40vw';
+                character2.style.top = '750vh';
+                character2.style.height = '120rem';
+                character3.style.left = '100vw';
+                character3.style.top = '250vh';
                 break;
             case 8: // Panel 8
                 character1.style.left = '10vw';
-                character1.style.top = '870vh';
-                character2.style.left = '100vw';
-                character2.style.top = '870vh';
+                character1.style.top = '860vh';
+                character1.style.height = '40rem';
+                character2.style.left = '45vw';
+                character2.style.top = '860vh';
+                character2.style.height = '40rem';
+                character3.style.left = '100vw';
+                character3.style.top = '250vh';
                 break;
             case 9: // Panel 9
                 character1.style.left = '10vw';
-                character1.style.top = '970vh';
-                character2.style.left = '100vw';
-                character2.style.top = '970vh';
+                character1.style.top = '960vh';
+                character1.style.height = '40rem';
+                character2.style.left = '65vw';
+                character2.style.top = '960vh';
+                character2.style.height = '40rem';
+                character3.style.left = '100vw';
+                character3.style.top = '250vh';
                 break;
             default:
                 character1.style.left = '10vw';
                 character1.style.top = '70vh';
+                character1.style.height = '20rem';
                 character2.style.left = '100vw';
                 character2.style.top = '70vh';
+                character2.style.height = '15rem';
+                character3.style.left = '100vw';
+                character3.style.top = '250vh';
         }
     }
 
@@ -175,73 +215,113 @@ document.addEventListener("DOMContentLoaded", function() {
             case 0: // Header
                 character1.style.left = '10vw';
                 character1.style.top = '70vh';
+                character1.style.height = '20rem';
                 character2.style.left = '100vw';
                 character2.style.top = '70vh';
+                character2.style.height = '15rem';
+                character3.style.left = '100vw';
+                character3.style.top = '250vh';
                 console.log("0");
                 break;
             case 1: // Panel 1
                 character1.style.left = '30vw';
                 character1.style.top = '170vh';
+                character1.style.height = '20rem';
                 character2.style.left = '100vw';
                 character2.style.top = '170vh';
+                character2.style.height = '15rem';
                 character3.style.left = '50vw';
-                character3.style.top = '150vh';
+                character3.style.top = '145vh';
                 break;
             case 2: // Panel 2
                 character1.style.left = '30vw';
                 character1.style.top = '270vh';
+                character1.style.height = '20rem';
                 character2.style.left = '100vw';
                 character2.style.top = '270vh';
+                character2.style.height = '15rem';
                 character3.style.left = '50vw';
-                character3.style.top = '250vh';
+                character3.style.top = '245vh';
                 break;
             case 3: // Panel 3
-                character1.style.left = '10vw';
+                character1.style.left = '30vw';
                 character1.style.top = '370vh';
-                character2.style.left = '100vw';
-                character2.style.top = '370vh';
+                character1.style.height = '20rem';
+                character2.style.left = '60vw';
+                character2.style.top = '375vh';
+                character2.style.height = '15rem';
+                character3.style.left = '100vw';
+                character3.style.top = '250vh';
                 break;
             case 4: // Panel 4
-                character1.style.left = '10vw';
+                character1.style.left = '30vw';
                 character1.style.top = '470vh';
-                character2.style.left = '100vw';
-                character2.style.top = '470vh';
+                character1.style.height = '20rem';
+                character2.style.left = '60vw';
+                character2.style.top = '475vh';
+                character2.style.height = '15rem';
+                character3.style.left = '100vw';
+                character3.style.top = '250vh';
                 break;
             case 5: // Panel 5
-                character1.style.left = '10vw';
-                character1.style.top = '570vh';
+                character1.style.left = '45vw';
+                character1.style.top = '550vh';
+                character1.style.height = '40rem';
                 character2.style.left = '100vw';
                 character2.style.top = '570vh';
+                character2.style.height = '40rem';
+                character3.style.left = '100vw';
+                character3.style.top = '250vh';
                 break;
             case 6: // Panel 6
-                character1.style.left = '10vw';
-                character1.style.top = '670vh';
-                character2.style.left = '100vw';
-                character2.style.top = '670vh';
+                character1.style.left = '30vw';
+                character1.style.top = '650vh';
+                character1.style.height = '40rem';
+                character2.style.left = '60vw';
+                character2.style.top = '650vh';
+                character2.style.height = '40rem';
+                character3.style.left = '100vw';
+                character3.style.top = '250vh';
                 break;
             case 7: // Panel 7
                 character1.style.left = '10vw';
-                character1.style.top = '770vh';
-                character2.style.left = '100vw';
-                character2.style.top = '770vh';
+                character1.style.top = '750vh';
+                character1.style.height = '120rem';
+                character2.style.left = '50vw';
+                character2.style.top = '750vh';
+                character2.style.height = '120rem';
+                character3.style.left = '100vw';
+                character3.style.top = '250vh';
                 break;
             case 8: // Panel 8
-                character1.style.left = '10vw';
-                character1.style.top = '870vh';
-                character2.style.left = '100vw';
-                character2.style.top = '870vh';
+                character1.style.left = '30vw';
+                character1.style.top = '850vh';
+                character1.style.height = '40rem';
+                character2.style.left = '50vw';
+                character2.style.top = '850vh';
+                character2.style.height = '40rem';
+                character3.style.left = '100vw';
+                character3.style.top = '250vh';
                 break;
             case 9: // Panel 9
-                character1.style.left = '10vw';
-                character1.style.top = '970vh';
-                character2.style.left = '100vw';
-                character2.style.top = '970vh';
+                character1.style.left = '30vw';
+                character1.style.top = '950vh';
+                character1.style.height = '40rem';
+                character2.style.left = '60vw';
+                character2.style.top = '950vh';
+                character2.style.height = '40rem';
+                character3.style.left = '100vw';
+                character3.style.top = '250vh';
                 break;
             default:
                 character1.style.left = '10vw';
                 character1.style.top = '70vh';
+                character1.style.height = '20rem';
                 character2.style.left = '100vw';
                 character2.style.top = '70vh';
+                character2.style.height = '15rem';
+                character3.style.left = '100vw';
+                character3.style.top = '250vh';
         }
     }
 

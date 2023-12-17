@@ -60,11 +60,28 @@ window.onload = function() {
     
         let emSize = parseFloat(getComputedStyle(document.body).fontSize);
     
-        let startX = startRect.left + startRect.width / 2;
-        let startY = startRect.top + startRect.height / 2 + window.scrollY;
-        let endX = endRect.left + endRect.width / 2;
-        let endY = endRect.top + endRect.height / 2 + window.scrollY;
-    
+        let startX;
+        let startY;
+        let endX;
+        let endY;
+
+        if(currentPanelIndex === 4){
+            startX = startRect.left + startRect.width / 3.5;
+            startY = startRect.top + startRect.height / 2 + window.scrollY;
+            endX = endRect.left + endRect.width / 2;
+            endY = endRect.top + endRect.height / 2 + window.scrollY;
+        }else if(currentPanelIndex === 8){
+            startX = startRect.left + startRect.width / 2;
+            startY = startRect.top + startRect.height / 2 + window.scrollY;
+            endX = endRect.left + endRect.width / 1.5;
+            endY = endRect.top + endRect.height / 2 + window.scrollY;
+        }else{
+            startX = startRect.left + startRect.width / 2;
+            startY = startRect.top + startRect.height / 2 + window.scrollY;
+            endX = endRect.left + endRect.width / 2;
+            endY = endRect.top + endRect.height / 2 + window.scrollY;
+        }
+
         let scribbleStartX = highlightRect.left + (emSize*4); 
         let scribbleStartY = highlightRect.top + window.scrollY + highlightRect.height + (emSize*7);
     

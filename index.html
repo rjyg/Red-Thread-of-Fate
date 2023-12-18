@@ -9,6 +9,7 @@
     <script src="scripts/thread.js"></script>
     <script src="scripts/scroll.js"></script>
     <script src="scripts/characters.js"></script>
+    <script src="scripts/cursor.js"></script>
     <title>The Red Thread of Fate</title>
 </head>
 
@@ -18,6 +19,20 @@
         <p>Please view in portrait mode or a bigger screen!</p>
     </div>
     <div id="container">
+        <div id="nav">
+            <ul>
+                <li><a href="#container">Start</a></li>
+                <li><a href="#panel1">1</a></li>
+                <li><a href="#panel2">2</a></li>
+                <li><a href="#panel3">3</a></li>
+                <li><a href="#panel4">4</a></li>
+                <li><a href="#panel5">5</a></li>
+                <li><a href="#panel6">6</a></li>
+                <li><a href="#panel7">7</a></li>
+                <li><a href="#panel8">8</a></li>
+                <li><a href="#panel9">9</a></li>
+            </ul>
+        </div>
         <canvas id="redLineCanvas"></canvas>
         <header>
             <div id="header">
@@ -28,39 +43,57 @@
         </header>
         <div id="narrative">
             <img id="character1" class="character" src="images/panel 1 - boy.svg" />
-            <img id="character2" class="character" src="https://placehold.co/100x100" />
+            <img id="character2" class="character" src="images/panel 3 - girl.svg" />
             <div id="panel1">
-                <p class="narrative-text">A young boy meets Yue Lao<span class="highlight"></span>, the god of marriage and love, under the moonlight.</p>
-                <img id="character3" class="character" src="images/panel 1 - yue lao.svg" />
+                <div class="narrative-container">
+                    <p class="narrative-text">A young boy meets Yue Lao<span class="highlight"></span>, the god of marriage and love, under the moonlight.</p>
+                </div>
+                    <img id="character3" class="character" src="images/panel 1 - yue lao.svg" />
             </div>
             <div id="panel2">
-                <p class="narrative-text">Yue Lao reveals the <span class="highlight">red thread of fate</span>, connecting the boy to his destined wife.</p>
+                <div class="narrative-container">
+                    <p class="narrative-text">Yue Lao reveals the <span class="highlight">red thread of fate</span>, connecting the boy to his destined wife.</p>
+                </div>
             </div>
             <div id="panel3">
-                <p class="narrative-text">The red thread leads to a <span class="highlight">young girl</span>, unknown to the boy.</p>
+                <div class="narrative-container">
+                    <p class="narrative-text">The red thread leads to a <span class="highlight">young girl</span>, unknown to the boy.</p>
+                </div>
             </div>
             <div id="panel4">
-                <p class="narrative-text">In his youthful naivety, the boy throws a <span class="highlight">rock</span> at the girl and runs away.</p>
+                <div class="narrative-container">
+                    <p class="narrative-text">In his youthful naivety, the boy throws a <span class="highlight">rock</span> at the girl and runs away.</p>
+                </div>
             </div>
             <div id="panel5">
-                <p class="narrative-text">Years later, the boy, now a young man, is set to be <span class="highlight">married</span>.</p>
+                <div class="narrative-container">
+                    <p class="narrative-text">Years later, the boy, now a young man, is set to be <span class="highlight">married</span>.</p>
+                </div>
             </div>
             <div id="panel6">
-                <p class="narrative-text">On his wedding night, he discovers <span class="highlight">his wife</span> to be a great beauty of the village.</p>
+                <div class="narrative-container">
+                    <p class="narrative-text">On his wedding night, he discovers <span class="highlight">his wife</span> to be a great beauty of the village.</p>
+                </div>
             </div>
             <div id="panel7">
-                <p class="narrative-text">He notices an <span class="highlight">adornment</span> on her eyebrow.</p>
+                <div class="narrative-container">
+                    <p class="narrative-text">He notices an <span class="highlight">adornment</span> on her eyebrow.</p>
+                </div>
             </div>
             <div id="panel8">
-                <p class="narrative-text">She reveals that a boy once <span class="highlight">threw a rock at her</span>, leaving a scar.</p>
+                <div class="narrative-container">
+                    <p class="narrative-text">She reveals that a boy once <span class="highlight">threw a rock at her</span>, leaving a scar.</p>
+                </div>
             </div>
             <div id="panel9">
-                <p class="narrative-text">The red thread of fate had bound them all along, from childhood to this <span class="highlight">destined</span> union.</p>
+                <div class="narrative-container">
+                    <p class="narrative-text">The red thread of fate had bound them all along, from childhood to this <span class="highlight">destined</span> union.</p>
+                </div>
             </div>
         </div>
-        <footer>
+        <!-- <footer>
             <p><a href="#container">BACK TO THE TOP</a></p>
-        </footer>
+        </footer> -->
     </div>
 </body>
 

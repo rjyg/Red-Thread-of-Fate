@@ -6,7 +6,7 @@ window.onload = function() {
     let highlight = document.querySelector('.highlight');
     let currentPanelIndex = 0;
 
-    const panels = [document.querySelector('header'), ...document.querySelectorAll('#narrative > div'), document.querySelector('footer')];
+    const panels = [document.querySelector('header'), ...document.querySelectorAll('#narrative > div')/*, document.querySelector('footer')*/];
 
     function getPanelIndexInView() {
         let closestIndex = -1;
@@ -91,7 +91,7 @@ window.onload = function() {
         ctx.beginPath();
         ctx.moveTo(startX, startY);
     
-        // Vary the width in the wavy line section
+        // Maths to vary width of the thread - left half
         for (let i = 0; i <= 1; i += 0.01) {
             let x = lerp(startX, scribbleStartX, i);
             let y = lerp(startY, scribbleStartY, i) + amplitude * Math.sin(frequency * i * 2 * Math.PI);
@@ -103,7 +103,7 @@ window.onload = function() {
         }
     
         let lastX = scribbleStartX, lastY = scribbleStartY;
-        // Vary the width in the scribble loops section
+        // Maths to vary width of the scribble
         for (let i = 0; i < 15; i++) {
             let nextX = scribbleStartX + Math.random() * 100 - 50;
             let nextY = scribbleStartY + Math.random() * 100 - 50;
@@ -120,7 +120,7 @@ window.onload = function() {
             ctx.moveTo(nextX, nextY);
         }
     
-        // Vary the width in the final wavy line section
+        // Maths to vary width of the thread - right half
         for (let i = 0; i <= 1; i += 0.01) {
             let x = lerp(lastX, endX, i);
             let y = lerp(lastY, endY, i) + amplitude * Math.sin(frequency * i * 2 * Math.PI);

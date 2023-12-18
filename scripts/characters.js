@@ -232,6 +232,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 character2.style.height = '15rem';
                 character3.style.left = '50vw';
                 character3.style.top = '145vh';
+                character3.style.maxHeight = '50vh';
                 break;
             case 2: // Panel 2
                 character1.style.left = '30vw';
@@ -242,6 +243,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 character2.style.height = '15rem';
                 character3.style.left = '50vw';
                 character3.style.top = '245vh';
+                character3.style.maxHeight = '50vh';
                 break;
             case 3: // Panel 3
                 character1.style.left = '30vw';

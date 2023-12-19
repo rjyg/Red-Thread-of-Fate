@@ -1,5 +1,6 @@
 @import url(https://fonts.bunny.net/css?family=hind:300,400,700|playfair-display:700,800);
 
+/* General page styling */
 * {
     padding: 0;
     margin: 0;
@@ -16,14 +17,27 @@ html {
     scroll-behavior: smooth;
 }
 
-body{
+h1,
+h2 {
+    font-family: "Playfair Display", 'Times New Roman', serif;
+    font-weight: 700;
+    color: #f05b5b;
+}
+
+p {
+    font-size: 1.8rem;
+}
+
+/* Custom cursor */
+body {
     cursor: url('../images/cursor.png') 7.5 7.5, auto;
 }
 
-.cursor-mousedown{
+.cursor-mousedown {
     cursor: url('../images/cursor1.png') 7.5 7.5, auto;
 }
 
+/* Navigation styling */
 #nav {
     z-index: 15;
     position: fixed;
@@ -34,7 +48,6 @@ body{
     justify-content: center;
     align-items: center;
     background-color: #f8e7d3;
-    /* box-shadow: 0px 5px 15px 1px rgb(240 91 91 / 15%) */
 }
 
 #nav ul {
@@ -56,49 +69,107 @@ body{
     padding: 1.6rem;
 }
 
-h1, h2 {
-    font-family: "Playfair Display", 'Times New Roman', serif;
-    font-weight: 700;
-    color: #f05b5b;
-}
-
-p {
-    font-size: 1.8rem;
-}
-
-a{
+/* Link styling */
+a {
     text-decoration: none;
     color: #f05b5b;
     font-weight: 700;
 }
 
-a:visited{
+a:visited {
     text-decoration: none;
     color: #f05b5b;
     font-weight: 700;
 }
 
-a, a:hover, a:active, a:visited {
+a,
+a:hover,
+a:active,
+a:visited {
     cursor: url('../images/cursor1.png') 7.5 7.5, auto;
 }
 
-/* Container */
-#container{
+/* Page container */
+#container {
     display: flex;
     flex-direction: column;
     position: relative;
     overflow: hidden;
 }
 
-#redLineCanvas{
+/* Canvas to continuously redraw the red thread with Javascript */
+#redLineCanvas {
     position: absolute;
     top: 0;
     left: 0;
     z-index: 1;
 }
 
-/* Rotate your screen */
+/* Character positioning to have Javascript control sizing and position */
+.character {
+    position: absolute;
+    z-index: 2;
+    transition: all ease;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* Panels */
+#panel1,
+#panel2,
+#panel3,
+#panel4,
+#panel5,
+#panel6,
+#panel7,
+#panel8,
+#panel9 {
+    width: 100vw;
+    height: 100vh;
+}
+
+/* Narrative */
+#narrative {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.narrative-container {
+    z-index: 10;
+    position: relative;
+    top: 30vh;
+    text-align: center;
+    width: 80vw;
+    margin: auto;
+}
+
+.narrative-text {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border: 2px solid #494949;
+}
+
+/* Hide the rotate your screen image */
+#rotate {
+    display: none;
+}
+
+
+/*          MEDIA QUERY          */
+/*      Rotate your screen       */
+/*      Max height of 740px      */
 @media screen and (max-height: 740px) {
+
+    /* Rotate your screen container */
     #rotate {
         display: flex;
         width: 100vw;
@@ -114,26 +185,16 @@ a, a:hover, a:active, a:visited {
         object-fit: contain;
     }
 
-    #container > :not(#rotate) {
+    /* Hides everything that isn't the rotate div */
+    #container> :not(#rotate) {
         display: none;
     }
 }
 
-/* Small screens */
+/*                MEDIA QUERY                 */
+/*               Small screens                */
+/* Max width of 960px and min height of 741px */
 @media screen and (max-width: 960px) and (min-height: 741px) {
-    #rotate {
-        display: none;
-    }
-
-    /* Header */
-    header {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100vw;
-        height: 100vh;
-    }
-
     header h1 {
         font-size: 4.8rem;
         padding-left: 2rem;
@@ -146,150 +207,17 @@ a, a:hover, a:active, a:visited {
         padding-left: 2rem;
         padding-right: 2rem;
     }
-
-    /* Character */
-    .character {
-        position: absolute;
-        z-index: 2;
-        transition: all ease;
-    }
-
-    #character1 {
-        top: 70vh;
-        left: 5rem;
-        /* max-height: 20rem; */
-    }
-
-    #character2 {
-        top: 70vh;
-        left: 100vw;
-        /* height: 15rem; */
-    }
-
-    #character3{
-        /* height: 40rem; */
-    }
-
-    /* Panels */
-    #narrative {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-    }
-
-    #panel1, #panel2, #panel3, #panel4, #panel5, #panel6, #panel7, #panel8, #panel9 {
-        width: 100vw;
-        height: 100vh;
-    }
-
-    .narrative-container {
-        z-index: 10;
-        position: relative;
-        top: 30vh;
-        text-align: center;
-        width: 80vw;
-        margin: auto;
-    }
-    
-    .narrative-text {
-        display: inline-block;
-        padding: 1rem 2rem;
-        border: 2px solid #494949;
-    }
-
-    /* Footer */
-    footer {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100vw;
-        height: 100vh;
-        z-index: 5;
-    }
 }
 
-/* For desktop */
+/*                MEDIA QUERY                 */
+/*                 Desktops                   */
+/* Min width of 960px and min height of 741px */
 @media only screen and (min-width: 960px) and (min-height: 741px) {
-    #rotate {
-        display: none;
-    }
-
-    /* Header */
-    header {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100vw;
-        height: 100vh;
-    }
-
     header h1 {
         font-size: 4.8rem;
     }
 
     header p {
         padding-left: 10rem;
-    }
-
-    /* Character */
-    .character {
-        position: absolute;
-        z-index: 2;
-        transition: all ease;
-    }
-
-    #character1 {
-        top: 70vh;
-        left: 5rem;
-        /* height: 20rem; */
-    }
-
-    #character2 {
-        top: 70vh;
-        left: 100vw;
-        /* height: 15rem; */
-    }
-
-    #character3{
-        /* height: 40rem; */
-    }
-
-    /* Panels */
-    #narrative {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-    }
-
-    #panel1, #panel2, #panel3, #panel4, #panel5, #panel6, #panel7, #panel8, #panel9 {
-        width: 100vw;
-        height: 100vh;
-    }
-
-    .narrative-container {
-        z-index: 10;
-        position: relative;
-        top: 30vh;
-        text-align: center;
-        width: 80vw;
-        margin: auto;
-    }
-    
-    .narrative-text {
-        display: inline-block;
-        padding: 1rem 2rem;
-        border: 2px solid #494949;
-    }
-
-    /* Footer */
-    footer {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100vw;
-        height: 100vh;
-        z-index: 5;
     }
 }

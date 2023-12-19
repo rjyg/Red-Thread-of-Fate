@@ -1,10 +1,14 @@
-document.addEventListener("DOMContentLoaded", function() {
+// Event listener to wait for page to fully load before running the script
+document.addEventListener("DOMContentLoaded", function () {
+    // Selects the header element and narrative divs (since characters appear in those)
     const header = document.querySelector('header');
-    const panels = [header, ...document.querySelectorAll('#narrative > div'), document.querySelector('footer')];
+    const panels = [header, ...document.querySelectorAll('#narrative > div')];
+    // Selects the characters by their element IDs
     const character1 = document.getElementById('character1');
     const character2 = document.getElementById('character2');
     const character3 = document.getElementById('character3');
 
+    // Calculates which panel is currently in view by checking the position in the viewport and returns it (panelIndex)
     function getPanelIndexInView() {
         let panelIndex = 0;
         for (let i = 0; i < panels.length; i++) {
@@ -18,6 +22,7 @@ document.addEventListener("DOMContentLoaded", function() {
         return panelIndex;
     }
 
+    // Updates the image sources for the characters depending on the panelIndex
     function changeCharacterImages(panelIndex) {
         let imagePath1, imagePath2, imagePath3;
         switch (panelIndex) {
@@ -76,12 +81,14 @@ document.addEventListener("DOMContentLoaded", function() {
                 imagePath2 = 'images/panel 3 - girl.svg';
                 imagePath3 = 'images/panel 2 - yue lao.svg';
         }
-        // Set image sources
+        // Sets the image sources
         character1.src = imagePath1;
         character2.src = imagePath2;
         character3.src = imagePath3;
     }
 
+    // Determines if the viewer is on mobile or desktop and executes its respective function to move the characters.
+    // Also checks and updates the characters images.
     function moveCharacters(panelIndex) {
         if (window.innerWidth <= 960) {
             // Mobile screens
@@ -93,9 +100,10 @@ document.addEventListener("DOMContentLoaded", function() {
         changeCharacterImages(panelIndex);
     }
 
+    // Positions the characters for mobile users depending on the panelIndex
     function positionCharactersForMobile(panelIndex) {
         // Define positions for mobile screens
-        switch(panelIndex) {
+        switch (panelIndex) {
             case 0: // Header
                 character1.style.left = '10vw';
                 character1.style.top = '70vh';
@@ -209,9 +217,10 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
+    // Positions the characters for desktop users depending on the panelIndex
     function positionCharactersForDesktop(panelIndex) {
         // Define positions for desktop screens
-        switch(panelIndex) {
+        switch (panelIndex) {
             case 0: // Header
                 character1.style.left = '10vw';
                 character1.style.top = '70vh';
@@ -327,17 +336,17 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    // Event listener for scroll
-    window.addEventListener('scroll', function() {
+    // Event listener for scroll that updates the panel in view and the characters positions
+    window.addEventListener('scroll', function () {
         const panelIndexInView = getPanelIndexInView();
         moveCharacters(panelIndexInView);
     });
 
-    // Event listener for window resize
-    window.addEventListener('resize', function() {
+    // Event listener for window resize that updates the characters position on resizing the window
+    window.addEventListener('resize', function () {
         moveCharacters(getPanelIndexInView());
     });
 
-    // Initial setup
+    // Initial setup of the characters' positions
     moveCharacters(getPanelIndexInView());
 });
